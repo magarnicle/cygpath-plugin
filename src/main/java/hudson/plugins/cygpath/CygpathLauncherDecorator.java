@@ -32,7 +32,6 @@ import hudson.model.Node;
 import hudson.remoting.Channel;
 import hudson.remoting.VirtualChannel;
 import hudson.remoting.Callable;
-import hudson.util.IOException2;
 import hudson.util.jna.JnaException;
 import hudson.util.jna.RegistryKey;
 
@@ -135,7 +134,7 @@ public class CygpathLauncherDecorator extends LauncherDecorator {
                 }
             }
 
-            throw new IOException2("Failed to locate Cygwin installation. Is Cygwin installed?",err);
+            throw new IOException("Failed to locate Cygwin installation. Is Cygwin installed?",err);
         }
 
         public String call() throws IOException {
